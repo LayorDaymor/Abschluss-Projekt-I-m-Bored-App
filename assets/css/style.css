@@ -1,0 +1,287 @@
+.intro-h1 {
+  padding: 0;
+  font-size: 5vw;
+  margin: 0;
+  position: relative;
+  word-wrap: unset;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+  font-size: 2rem;
+  z-index: 10000;
+  color: rgb(188,188,188);
+}
+
+.lets-start-img {
+  object-fit: cover;
+  background-position: center;
+}
+
+.typed-items {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Lora,Helvetica Neue,Helvetica,Arial,sans-serif;
+  position: relative;
+  color: #fff;
+  background-color: black;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 14px;
+  padding: 11px;
+  color: #fff;
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(0,0,0,.5);
+}
+
+.back-to-top:hover {
+  color: #DC143C;
+}
+
+#download {
+  height: 100vh;
+}
+
+.btn-default:focus, .btn-default:hover {
+  color: white;
+  border: 1px solid #dc143c;
+  outline: none;
+  background-color: #dc143c;
+}
+
+#portfolio {
+
+  background-color: white;
+}
+
+#mainNav a {
+  text-align: left;
+}
+
+.masthead {
+  background-position: center;
+}
+
+#game-intro {
+  height: 100vh;
+  background-color: white;
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .game-intro-heading {
+    color: rgb(33,37,41);
+    font-weight: 800;
+    letter-spacing: -3px;
+    padding-top: 6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-intro-heading {
+    color: rgb(33,37,41);
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: -3px;
+    font-size: 2rem;
+    padding-top: 6rem;
+  }
+}
+
+
+
+.education {
+  background: white;
+}
+
+.cooking img {
+  width: 400px;
+  height: 400px;
+  border: 7px solid #fff;
+}
+
+
+
+.col.edcution {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 10%;
+}
+
+.team-member.music img {
+  width: 400px;
+  height: 400px;
+  border: 7px solid #fff;
+}
+
+.team-member.edcution img {
+
+  width: 400px;
+  height: 400px;
+  border: 7px solid #fff;
+}
+
+.team-member.cooking {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.team-member.music {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.team-member.edcution {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.row.game-typs {
+  color: #1d1d1d;
+
+}
+.game-typ img {
+  height: 300px;
+  width: 400px;
+}
+
+.fa.fa-mail-forward {
+  color: black;
+}
+
+.img-fluid, .img-thumbnail {
+  object-fit: cover;
+}
+
+#app-activities{
+  background: white;
+  color: rgb(33,37,41);
+  cursor: pointer;
+  display: none;
+}
+#game-intro {
+  height: auto;
+  display: none;
+}
+
+#game-participants img {
+  height: 200px;
+  width: 100vh;
+}
+
+#game-participants {
+  background-color: white;
+  display: none;
+}
+
+#suggestion-section {
+  height: 100vh;
+  background-color: white;
+  display: none;
+  color: #1d1d1d;
+}
+#suggestion-section-for-TypsMode{
+  height: 100vh;
+  background-color: white;
+  display: none;
+  color: #1d1d1d ;
+  padding-top: 4rem;
+  font-weight: 700;
+}
+#suggestion-section-for-random-activities{
+  height: 100vh;
+  background-color: white;
+  display: none;
+  color: #1d1d1d;
+}
+#suggestion-result{
+  height:auto;
+  background-color: white;
+  padding-bottom: 5rem;
+}
+
+.btn--doar {
+  border:none;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding: 15px;
+  padding-right: 0;
+  background-color: #dc143c;
+  transition: all .5s ease; 
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+
+}
+
+.btn--doar:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);  
+}
+
+.btn--doar:after {
+  content: "\f004";
+  color: #1d1d1d;
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+}
+
+.btn--doar:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+}
+
+.btn--doar2 {
+  border:none;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding: 15px;
+  padding-right: 0;
+  background-color: #1f1f1f;
+  transition: all .5s ease; 
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+
+}
+
+.btn--doar2:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);  
+  color: crimson;
+}
+
+.btn--doar2:after {
+  content: "\f01e";
+  color: crimson;
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+}
+
+.btn--doar2:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+}
+@keyframes anim1 {
+  0%{transform: scaleY(0.5);opacity: 0;}
+  50%{transform: translateY(-10px) scaleY(1.4); opacity: 1;}
+  100%{transform: translateY(-20px) scaleY(0.5);opacity: 0;}
+}
+
