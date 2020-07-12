@@ -1,0 +1,51 @@
+class BoredApi{
+  constructor(act,typ,participants){
+      this.act=act;
+      this.typ=typ;
+      this.participants=participants;
+  }
+  
+  HTMLgenratorn(){
+      return`
+  <div id="suggestion-result1">
+  <h1
+  class="col-sm-12 component-header--title text-center display-4"
+  data-aos="fade-right"
+  data-aos-duration="0"
+  data-aos-delay="100"
+  style="font-family: Catamaran, sans-serif;font-weight:900;"
+>
+ What about that ? 
+  <br />
+</h1>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-1">
+        <div data-aos="fade-right" data-aos-delay="450" class="p-5">
+          <img
+            class="img-fluid"
+            src="assets/img/typs/${this.type}.png"
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2">
+        <div>
+          <h2 data-aos="fade-left" data-aos-delay="300" class="display-4 Typ-activity-place"style="font-family: Catamaran, sans-serif;font-weight:900;">
+          ${this.activity}
+          </h2>
+          <div data-aos="fade-left" data-aos-delay="380">
+          <p class="h3"style="font-family: Catamaran, sans-serif;font-weight:400;">Do you Like this suggestion? </p>
+          </div>
+          <div data-aos="fade-left" data-aos-delay="450">
+          <button class="btn btn--doar"style="font-family: Catamaran, sans-serif;font-weight:900;" onclick="sugLiked1()">Yeh i like it !</button>
+          </div>
+          <div data-aos="fade-left" data-aos-delay="600">
+          <button class="btn btn--doar2"style="font-family: Catamaran, sans-serif;font-weight:900;"onclick="sugNotLiked1()">Nah not realy !</button>
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>`  
+}

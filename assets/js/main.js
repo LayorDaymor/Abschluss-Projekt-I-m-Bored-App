@@ -5,7 +5,7 @@
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (
       location.pathname.replace(/^\//, "") ==
-      this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
       location.hostname == this.hostname
     ) {
       var target = $(this.hash);
@@ -126,6 +126,7 @@ $("#random-activities").click(function () {
 $("#for-mode").click(function () {
   $("#suggestion-result").css("display", "none");
   $("#game-participants").css("display", "none");
+  $("#suggestion-section").css("display", "none");
   $("#suggestion-section-for-random-activities").css("display", "none");
   $("#game-intro").css("display", "block");
   $("html, body").animate(
@@ -179,133 +180,173 @@ $(".participantsNumber").click(function () {
   );
 });
 
-/* for saving the choised Options and feth the Api  */
+/* for saving the choised Options and feth the Api (Data Bank) */
 let choisedOption = [];
+let choisedApi = [];
+//////////////////////////////////////////////////////////////////////////////
+
+/* BoredApi Class for API Information and Output */
+class BoredApi {
+  constructor(activity, type, participants) {
+    this.activity = activity;
+    this.type = type;
+    this.participants = participants;
+  }
+
+  Output() {
+    return `
+  <div id="suggestion-result1">
+  <h1
+  class="col-sm-12 component-header--title text-center display-4"
+  data-aos="fade-right"
+  data-aos-duration="0"
+  data-aos-delay="100"
+  style="font-family: Catamaran, sans-serif;font-weight:900;"
+>
+ What about .. 
+  <br />
+</h1>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-1">
+        <div data-aos="fade-right" data-aos-delay="450">
+          <img
+            class="img-fluid"
+            src="assets/img/typs/${this.type}.png"
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2">
+        <div>
+        <div data-aos="fade-left" data-aos-delay="600">
+        <p class="h2 p-0 m-0"style="font-family: Catamaran, sans-serif;font-weight:700;text-transform: capitalize;">${this.type}</p>
+        <p data-aos="fade-left" data-aos-delay="700" class="h2 p-0 m-0"style="font-family: Catamaran, sans-serif;font-weight:700;text-transform: capitalize;">  participants: ${this.participants}</p>
+
+      
+        </div>
+          <h2 data-aos="fade-left" data-aos-delay="300" class="display-4 Typ-activity-place"style="font-family: Catamaran, sans-serif;font-weight:900;">
+          ${this.activity}
+          </h2>
+          <div data-aos="fade-left" data-aos-delay="380">
+          <p class="h3"style="font-family: Catamaran, sans-serif;font-weight:400;">Do you Like this suggestion? </p>
+          </div>
+          <div >
+          <button data-aos="fade-left" data-aos-delay="400" class="btn btn--doar"style="font-family: Catamaran, sans-serif;font-weight:900;" onclick="sugLiked()">Yeh i like it !</button>
+          <button  data-aos="fade-left" data-aos-delay="600" class="btn btn--doar2"style="font-family: Catamaran, sans-serif;font-weight:900;"onclick="sugNotLiked()">Nah not realy !</button>   
+          <button  data-aos="fade-left" data-aos-delay="800" class="btn btn--doar3"style="font-family: Catamaran, sans-serif;font-weight:900;"onclick="anotherChois()">Another Choise !</button>   
+
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="600">
+          
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+  }
+}
+//////////////////////////////////////////////////////////////////////////////
+
+/* Fetch appTyps Api */
 const suggestionSectionTyp = document.querySelector(
   "#suggestion-section-for-TypsMode"
 );
 const appTyps = (type) => {
-  choisedOption[1] = type;
   let url = `http://www.boredapi.com/api/activity?type=${type}`;
-  console.log(url);
+  choisedOption[1] = type;
+  choisedApi[0] = url;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      let activity = data.activity;
-      const markup = `
-    <section id="suggestion-result">
-    <h1
-    class="col-sm-12 component-header--title text-center display-4"
-    data-aos="fade-right"
-    data-aos-duration="0"
-    data-aos-delay="100"
-    style="font-family: Catamaran, sans-serif;font-weight:900;"
-  >
-   What about that ? 
-    <br />
-  </h1>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-1">
-          <div data-aos="fade-right" data-aos-delay="450" class="p-5">
-            <img
-              class="img-fluid"
-              src="assets/img/typs/${type}.png"
-            />
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-2">
-          <div>
-            <h2 data-aos="fade-left" data-aos-delay="300" class="display-4 Typ-activity-place"style="font-family: Catamaran, sans-serif;font-weight:900;">
-            ${activity}
-            </h2>
-            <div data-aos="fade-left" data-aos-delay="380">
-            <p class="h3"style="font-family: Catamaran, sans-serif;font-weight:400;">Do you Like this suggestion? </p>
-            </div>
-            <div data-aos="fade-left" data-aos-delay="450">
-            <button class="btn btn--doar"style="font-family: Catamaran, sans-serif;font-weight:900;" onclick="sugLiked()">Yeh i like it !</button>
-            </div>
-            <div data-aos="fade-left" data-aos-delay="600">
-            <button class="btn btn--doar2"style="font-family: Catamaran, sans-serif;font-weight:900;"onclick="sugNotLiked()">Nah not realy !</button>
-            </div>
-            </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </section>`;
-      suggestionSectionTyp.innerHTML = markup;
+      let apiInformation = new BoredApi(
+        data.activity,
+        data.type,
+        data.participants
+      );
+      suggestionSectionTyp.innerHTML = apiInformation.Output();
     });
 };
+//////////////////////////////////////////////////////////////////////////////
 
-const typActivityPlace=document.querySelector(".btn--doar");
-const sugNotLiked=()=>{
-  suggestionSectionTyp.innerHTML=""
-  let urlforTyps = `http://www.boredapi.com/api/activity?type=${choisedOption[1]}`;
-  fetch(urlforTyps)
-.then((response) => response.json())
-.then((data) => {
-  let activity = data.activity;
-  const markup = `
-<section id="suggestion-result">
-<h1
-class="col-sm-12 component-header--title text-center display-4"
-data-aos="fade-right"
-data-aos-duration="0"
-data-aos-delay="100"
-style="font-family: Catamaran, sans-serif;font-weight:900;"
->
-What about that ? 
-<br />
-</h1>
-<div class="container">
-  <div class="row align-items-center">
-    <div class="col-lg-6 order-lg-1">
-      <div data-aos="fade-right" data-aos-delay="450" class="p-5">
-        <img
-          class="img-fluid"
-          src="assets/img/typs/${choisedOption[1]}.png"
-        />
-      </div>
-    </div>
-    <div class="col-lg-6 order-lg-2">
-      <div>
-        <h2 data-aos="fade-left" data-aos-delay="300" class="display-4"style="font-family: Catamaran, sans-serif;font-weight:900;">
-        ${activity}
-        </h2>
-        <div data-aos="fade-left" data-aos-delay="380">
-        <p class="h3"style="font-family: Catamaran, sans-serif;font-weight:400;">Do you Like this suggestion? </p>
-        </div>
-        <div data-aos="fade-left" data-aos-delay="450">
-        <button class="btn btn--doar"style="font-family: Catamaran, sans-serif;font-weight:900;" onclick="sugLiked()">Yeh i like it !</button>
-        </div>
-        <div data-aos="fade-left" data-aos-delay="600">
-        <button class="btn btn--doar2"style="font-family: Catamaran, sans-serif;font-weight:900;"onclick="sugNotLiked()">Nah not realy !</button>
-        </div>
-        </div>
-        </div>
-    </div>
-  </div>
-</div>
-</section>`;
-  suggestionSectionTyp.innerHTML = markup;
-});
+
+/* Fetch participant Api */
+const suggestionSectionParticipants = document.querySelector(
+  "#suggestion-section"
+);
+const participantsNumber = (nr) => {
+  let url = `http://www.boredapi.com/api/activity?participants=${nr}`;
+  choisedOption[0] = nr;
+  choisedApi[0] = url;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      let apiInformation = new BoredApi(
+        data.activity,
+        data.type,
+        data.participants
+      );
+      suggestionSectionParticipants.innerHTML = apiInformation.Output();
+    });
+};
+//////////////////////////////////////////////////////////////////////////////
+
+
+/*  Fetch Rendom Api */ 
+const suggestionSectionRendom = document.querySelector(
+  "#suggestion-section-for-random-activities"
+);
+const rendomActivityes=()=>{
+  let url = `http://www.boredapi.com/api/activity/`;
+  choisedApi[0] = url;
+  fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    let apiInformation = new BoredApi(
+      data.activity,
+      data.type,
+      data.participants
+    );
+    suggestionSectionRendom.innerHTML = apiInformation.Output();
+  });
+}
+//////////////////////////////////////////////////////////////////////////////
+
+
+/* uploed another Suggestion button */
+const sugNotLiked = () => {
+  suggestionSectionTyp.innerHTML = "";
+  fetch(choisedApi)
+    .then((response) => response.json())
+    .then((data) => {
+      let apiInformation = new BoredApi(
+        data.activity,
+        data.type,
+        data.participants
+      );
+      if (suggestionSectionTyp.style.display=="block") {
+        suggestionSectionTyp.innerHTML = apiInformation.Output();
+      }
+      else if (suggestionSectionParticipants.style.display=="block") {
+        suggestionSectionParticipants.innerHTML = apiInformation.Output();
+      }
+       else {
+        suggestionSectionRendom.innerHTML = apiInformation.Output();
+      }
+     
+    });
+};
+//////////////////////////////////////////////////////////////////////////////
+const anotherChois=()=>{
+  if (suggestionSectionTyp.style.display=="block"||suggestionSectionParticipants.style.display=="block") {
+    window.scrollTo({top: 3400, left: 0, behavior: "smooth"})
+  }
+   else {
+    window.scrollTo({top: 2100, left: 0, behavior: "smooth"})
+  }
+ 
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const participantsNumber = (nr) => {
-  choisedOption[0] = nr;
-};
