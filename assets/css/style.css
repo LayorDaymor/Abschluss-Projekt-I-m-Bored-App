@@ -1,6 +1,5 @@
 .intro-h1 {
   padding: 0;
-  font-size: 5vw;
   margin: 0;
   position: relative;
   word-wrap: unset;
@@ -11,7 +10,7 @@
   position: fixed;
   right: 0.5rem;
   bottom: 1rem;
-  font-size: 2.5rem;
+  font-size: 4rem;
   transform: rotate(90deg);
   z-index: 10000;
   color: rgba(0, 0, 0, 0.9)
@@ -101,6 +100,14 @@ body {
     font-size: 2rem;
     padding-top: 6rem;
   }
+  .intro-h1 {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-size: 3rem;
+    word-wrap: unset;
+    font-family: 'Caveat', cursive;
+  }
 }
 
 
@@ -189,22 +196,7 @@ body {
   display: none;
 }
 
-#suggestion-section {
-  height: 140vh;
-  background-color: white;
-  display: none;
-  padding-top: 3rem;
-  color: #1d1d1d;
-}
-#suggestion-section-for-TypsMode{
-  height: 130vh;
-  background-color: white;
-  display: none;
-  color: #1d1d1d ;
-  padding-top: 1rem;
-  font-weight: 700;
-  transition: opacity 5s ease;
-}
+
 
 
 .btn--doar {
@@ -238,13 +230,8 @@ body {
 
 }
 
-#suggestion-section-for-random-activities{
-  background-color: white;
-  display: none;
-  color: #1d1d1d;
-  height: 130vh;
-  padding-top: 3rem;
-}
+
+
 #suggestion-result{
   height:130vh;
   background-color: white;
@@ -327,7 +314,78 @@ body {
   right: 0px;
 }
 
+.btn--doar4 {
+  border:none;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding: 15px;
+  padding-right: 0;
+  background-color: #DC143C;
+  transition: all .5s ease; 
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
 
+}
+
+.btn--doar4:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);  
+}
+
+.btn--doar4:after {
+  content: "\f004";
+  color: #1d1d1d;
+  font-size: 1rem;
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+
+}
+.btn--doar4:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+}
+
+.btn--doar5 {
+  border:none;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding: 15px;
+  padding-right: 0;
+  background-color: #1f1f1f;
+  transition: all .5s ease; 
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+
+}
+
+.btn--doar5:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);  
+  color: #dc143c;
+}
+
+.btn--doar5:after {
+  content: "\f01e";
+  color: crimson;
+  font-size: 1rem;
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+
+}
+.btn--doar5:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+}
 
 @keyframes anim1 {
   0%{transform: scaleY(0.5);opacity: 0;}
@@ -345,4 +403,44 @@ body {
 }
 
 
+iframe{
+  max-width: 100%;
+  height: 400px;
+  
+}
+#suggestion-section-for-TypsMode,#suggestion-section,#suggestion-section-for-random-activities{
+  height: 130vh;
+  background-color: white;
+  display: none;
+  color: #1d1d1d ;
+  padding-top: 4rem;
+  font-weight: 700;
+}
+#result-section-for-random,#result-section-for-TypsMode,#result-section-for-participants{
+  background-color: white;
+  height: 130vh;
+  width: auto;
+  display: none;
+}
 
+#last-result1{
+  padding-top: 12rem;
+  color:#1d1d1d ;
+  height: auto;
+  width: auto;
+}
+footer{
+  padding-top:50vh;
+  height: 144vh;
+  width: auto;
+  background-color: white;
+  color: #212529;
+  display: none;
+}
+.socialMedia{
+  color: #212529;
+  transition: 0.3s ease-in;
+}
+.socialMedia:hover{
+  color: crimson;
+}

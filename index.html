@@ -107,7 +107,7 @@
     <header
       data-bs-parallax-bg="true"
       class="masthead"
-      style="background-image: url('assets/img/13.jpg');"
+      style="background-image: url('assets/img/13.jpg');position: relative;"
     >
       <div
         id="intro-body"
@@ -127,13 +127,13 @@
             <div
               class="col-12 col-lg-8 offset-0 offset-lg-6 d-inline-flex flex-column flex-grow-1 flex-fill justify-content-between align-items-center mx-auto"
             >
-              <h1 data-aos="fade-down" class="intro-h1 ">
+              <h1 data-aos="fade-down" class="intro-h1 display-1 ">
                 Are you <span class="typed"></span>
               </h1>
               <br />
               <p
                 class="typed-items"
-                data-typed-person=" Bored,Sick and tired?,Hangry?  "
+                data-typed-person=" Bored?,Hangry?,with friends"
               ></p>
               <h1 Catamaran, sans-serif;
                 data-aos="fade-down"
@@ -170,7 +170,7 @@
     >
       <img
         data-aos="fade-down"
-        data-aos-duration="450"
+        data-aos-duration="450" 
         src="assets/img/e0af9181-40f0-44cc-8be3-3d18cf07929e_200x200.png"
         style="width: 289px;"
       />
@@ -213,7 +213,7 @@
         <div
           data-aos="fade-up"
           class="col-lg-8 mx-auto"
-          style="background-color: background-color: rgba(11,11,11,0.3);background-color: rgba(0,0,0,0.3);margin-top:15rem"
+          style="background-color: background-color: rgba(11,11,11,0.3);background-color: rgba(0,0,0,0.3); margin-top:20rem"
         >
           <h1
             data-aos="fade-left"
@@ -248,7 +248,7 @@
         style="font-family: Catamaran, sans-serif;"
       >
 
-      Just choose a suitable style from the following styles from the application
+      Just choose a suitable style from the following styles 
       </h1>
           <div class="content-section-heading text-center"></div>
           <div class="row no-gutters">
@@ -266,7 +266,7 @@
                   <a data-aos="fade-left" class="portfolio-item" >
                       <div class="caption">
                           <div class="caption-content">
-                              <h2 class="text-left" style="font-size: 36px;font-family: Cabin, sans-serif;font-weight: bold;">wITH FREINDS</h2>
+                              <h2 class="text-left" style="font-size: 36px;font-family: Cabin, sans-serif;font-weight: bold;">With Friends</h2>
                               <p class="mb-0" style="font-family: Cabin, sans-serif;">This option will give you activities based on the number of individuals participating!</p>
                           </div>
                       </div><img class="img-fluid" src="assets/img/undraw_fans_gr54.png?h=44e31a7c8152be136d7e81dabfcb3770"></a>
@@ -275,7 +275,7 @@
                   <a data-aos="fade-up" class="portfolio-item" >
                       <div class="caption">
                           <div class="caption-content">
-                              <h2 class="text-left" style="font-size: 36px;font-family: Cabin, sans-serif;font-weight: bold;">RENDOM</h2>
+                              <h2 class="text-left" style="font-size: 36px;font-family: Cabin, sans-serif;font-weight: bold;">Randpom</h2>
                               <p class="mb-0" style="font-family: Cabin, sans-serif;">
                                 Here you will get activities randomly in terms of moods and different numbers!</p>
                           </div>
@@ -382,6 +382,7 @@
       </section>
     </section> -->
     <section id="suggestion-section-for-random-activities"></section>
+    <section id="result-section-for-random"></section>
     <section id="game-intro">
       <h1
         class="text-left game-intro-heading col-sm-12 component-header--title text-center display-4"
@@ -660,6 +661,7 @@
       </div>
     </section>
     <section id="suggestion-section-for-TypsMode"></section>
+    <section id="result-section-for-TypsMode"></section>
     <section id="game-participants">
       <div class="container">
         <h3
@@ -678,9 +680,8 @@
           <div
             onclick="participantsNumber(`1`)"
             class="col-sm-6 col-md-4 participantsNumber"
-            data-aos="fade"
-            data-aos-duration="1300"
-            data-aos-delay="100"
+            data-aos="fade-left"
+
           >
             <a
               class="portfolio-link"
@@ -709,9 +710,8 @@
           <div
             onclick="participantsNumber(`2`)"
             class="col-sm-6 col-md-4 participantsNumber"
-            data-aos="fade"
-            data-aos-duration="1300"
-            data-aos-delay="300"
+            data-aos="fade-left"
+
           >
             <a
               class="portfolio-link"
@@ -740,9 +740,8 @@
           <div
             onclick="participantsNumber(`3`)"
             class="col-sm-6 col-md-4 participantsNumber"
-            data-aos="fade"
-            data-aos-duration="1300"
-            data-aos-delay="500"
+            data-aos="fade-left"
+          
           >
             <a
               class="portfolio-link"
@@ -771,9 +770,9 @@
           <div
             onclick="participantsNumber(`4`)"
             class="col-sm-6 col-md-4 participantsNumber"
-            data-aos="fade"
-            data-aos-duration="1300"
-            data-aos-delay="100"
+            data-aos="fade-left"
+           
+   
           >
             <a
               class="portfolio-link"
@@ -802,9 +801,8 @@
           <div
             onclick="participantsNumber(`5`)"
             class="col-sm-6 col-md-4 participantsNumber"
-            data-aos="fade"
-            data-aos-duration="1300"
-            data-aos-delay="300"
+            data-aos="fade-left"
+           
           >
             <a
               class="portfolio-link"
@@ -826,7 +824,7 @@
                   font-family: Cabin, sans-serif;
                 "
               >
-                5 Persons
+                More then 4+
               </p>
             </div>
           </div>
@@ -836,7 +834,27 @@
     </section>
     
     <section id="suggestion-section"></section>
-    <section id="results-section"></section>
+    <section id="result-section-for-participants"></section>
+    <footer>
+      <section>
+        <a href="" ></a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div><img class="footerLogo img-fluid" data-aos="fade-left" data-aos-delay="200" src="assets/img/footerLogo.png"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <div class="d-lg-flex align-items-lg-center">
+                            <h3 data-aos="fade-right" class="display-4" style="margin: 0px;font-family: Catamaran, sans-serif;font-weight: 800;">Made with</h3><i class="fa fa-heart pulse animated infinite" style="font-size: 61px;margin: 0;margin-top: -7px;margin-left: 11px;color: #dc143c;"></i></div>
+                        <p data-aos="fade-right" data-aos-delay="200" style="font-family: Catamaran, sans-serif;font-size: 19px;margin-right: 0px;margin-top: 11px;margin-bottom: 0;">Created by Ahmad Karbouj as&nbsp; Final project for&nbsp;<br>Junior Full-Stack Web-Developer<br><br></p><i class="fa fa-github" data-aos="fade-right" data-aos-delay="400" style="font-size: 64px;margin-left: 0px;margin-right: 10px;"></i>
+                        <i
+                            class="fa fa-instagram" data-aos="fade-up" data-aos-delay="550" style="font-size: 64px;margin-right: 10px;"></i><i class="fa fa-facebook-square" data-aos="fade-left" data-aos-delay="750" style="font-size: 64px;margin-right: 10px;"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
